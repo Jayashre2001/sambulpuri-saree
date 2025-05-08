@@ -107,3 +107,21 @@ const swiper = new Swiper('.photo-slider', {
       swiper: thumbSwiper
     }
   });
+
+  
+
+
+  
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const index = parseInt(dot.getAttribute('data-index'));
+
+      // Update info boxes
+      boxes.forEach(box => box.classList.remove('active'));
+      boxes[index].classList.add('active');
+
+      // Update dots
+      dots.forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+    });
+  });
